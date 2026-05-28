@@ -1,0 +1,493 @@
+@use "../scss/variables" as vars;
+@use "../scss/breakpoint" as bp;
+
+.login {
+    
+  min-height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  background: linear-gradient(135deg, red 0%, black 100%);
+
+  &__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vh;
+    padding: 2rem;
+    height : 100%;
+  }
+
+  &__card {
+    display: flex;
+    width: 100%;
+    height : 100%;
+    margin-top : 100px;
+    margin-bottom : 50px;
+    max-width: 800px;
+    background: black;
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+  }
+
+  &__aside {
+    flex: 1;
+    background: black;
+    color: vars.$white;
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      font-size: 1rem;
+    }
+  }
+
+  &__form-wrapper {
+    flex: 1;
+    padding: 3rem;
+    background: black;
+  }
+
+  &__header {
+    margin-bottom: 2rem;
+    text-align: center;
+
+    h1 {
+      font-size: 2rem;
+      font-weight: 1000;
+      color: vars.$white;
+      font-size : 2.9rem;
+      margin-bottom: 0.5rem;
+    }
+    p {
+      color: vars.$text-color;
+      font-size: 1rem;
+      font-weight: 1000;
+      font-family: 'Arial', sans-serif ;
+    }
+  }
+
+  &__error {
+    background-color: red;
+    border: 1px solid #000000;
+    color: vars.$white;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    margin-bottom: 1.5rem;
+    font-size: 0.9rem;
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  &__form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
+    label {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: vars.$white;
+    }
+
+    input {
+      padding: 0.75rem 1rem;
+      border: 1px solid rgba(255, 3, 3, 0.3);
+      border-radius: 0.5rem;
+      background-color: rgba(0, 212, 255, 0.08);
+      color: vars.$white;
+      font-size: 0.95rem;
+      transition: all 0.3s ease;
+
+      &::placeholder {
+        color: rgba(255, 255, 255, 0.5);
+      }
+
+      &:focus {
+        outline: none;
+        border-color: #df1133;
+        background-color: rgba(241, 19, 19, 0.12);
+        box-shadow: 0 0 15px rgba(0, 212, 255, 0.5);
+      }
+    }
+
+    &--inline {
+      flex-direction: row;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .login__remember-label {
+      color: vars.$white;
+      font-size: 0.9rem;
+      margin-left: 0.25rem;
+    }
+
+    .login__forgot {
+      text-align: right;
+      margin-bottom: 0.75rem;
+
+      a {
+        color: #00d4ff;
+        font-size: 0.9rem;
+        text-decoration: none;
+
+        &:hover {
+          color: #00ffff;
+          text-decoration: underline;
+        }
+      }
+    }
+
+    .login__social {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .login__social-btn {
+      width: 100%;
+      padding: 0.75rem;
+      border: none;
+      border-radius: 0.5rem;
+      font-size: 0.95rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .login__social-btn.google {
+      background: red;
+      color:black;
+      border: 1px solid red;
+    }
+    .login__social-btn.google:hover {
+      background: red;
+      color: #0a0e27;
+      box-shadow: 0 5px 15px rgba(0, 212, 255, 0.5);
+      transform: translateY(-2px);
+    }
+
+    .login__social-note {
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.7);
+      text-align: center;
+      margin: 0.25rem 0;
+    }
+
+  }
+
+  &__button {
+    padding: 0.85rem;
+    border: none;
+    border-radius: 0.5rem;
+    background: red;
+    color: white;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background: linear-gradient(135deg, black 0%, red 100%);
+      box-shadow: 0 5px 20px rgba(244, 3, 3, 0.5);
+      transform: translateY(-2px);
+    }
+
+    &:active {
+      transform: scale(0.98);
+    }
+  }
+
+  &__footer {
+    text-align: center;
+
+    p {
+      color: rgba(255, 255, 255, 0.8);
+      font-size: 0.9rem;
+      margin: 0;
+
+      a {
+        color: #00d4ff;
+        text-decoration: none;
+        font-weight: 600;
+        transition: color 0.3s ease;
+
+        &:hover {
+          color: #00ffff;
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
+  @include bp.mobile {
+    padding: 1rem;
+
+    &__container {
+      padding: 2rem;
+    }
+
+    &__card {
+      flex-direction: column;
+    }
+
+    &__aside {
+      padding: 2rem;
+    }
+
+    &__form-wrapper {
+      padding: 2rem;
+    }
+
+    &__header {
+      h1 {
+        font-size: 1.7rem;
+      }
+    }
+  }
+
+  &__modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+
+  &__modal {
+    background-color: vars.$body-bg;
+    border-radius: 1rem;
+    max-width: 400px;
+    width: 90%;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+  }
+
+  &__modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
+    h3 {
+      color: vars.$white;
+      font-size: 1.2rem;
+      margin: 0;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+  }
+
+  &__modal-close {
+    background: none;
+    border: none;
+    color: vars.$white;
+    font-size: 1.8rem;
+    cursor: pointer;
+    padding: 0;
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: #00d4ff;
+    }
+  }
+
+  &__modal-body {
+    padding: 1rem;
+    max-height: 400px;
+    overflow-y: auto;
+  }
+
+  &__account-option {
+    width: 100%;
+    padding: 1rem;
+    margin-bottom: 0.5rem;
+    background-color: rgba(0, 212, 255, 0.08);
+    border: 1px solid rgba(0, 212, 255, 0.3);
+    border-radius: 0.5rem;
+    color: vars.$white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    text-align: left;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background-color: rgba(0, 212, 255, 0.15);
+      border-color: #071517;
+    }
+
+    i {
+      font-size: 2rem;
+      color: #041012;
+      flex-shrink: 0;
+    }
+  }
+
+  &__account-email {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.85rem;
+    margin: 0.25rem 0 0 0;
+  }
+
+  &__no-accounts {
+    color: rgba(255, 255, 255, 0.7);
+    text-align: center;
+    padding: 1rem;
+    margin: 0;
+    font-size: 0.9rem;
+  }
+
+  &__add-account-btn {
+    width: 100%;
+    padding: 0.75rem;
+    margin-top: 1rem;
+    background-color: rgba(0, 212, 255, 0.1);
+    border: 1px dashed #00d4ff;
+    border-radius: 0.5rem;
+    color: #ddedf1;
+    cursor: pointer;
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background-color: rgba(0, 212, 255, 0.15);
+      border-color: #00ffff;
+      color: #00ffff;
+    }
+  }
+
+  &__add-google-form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    padding: 1rem;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 0.5rem;
+    margin-top: 1rem;
+  }
+&__add-name-input {
+    padding: 0.75rem;
+    border: 1px solid rgba(0, 212, 255, 0.3);
+    border-radius: 0.5rem;
+    background-color: rgba(0, 212, 255, 0.08);
+    color: vars.$white;
+    font-size: 0.9rem;
+
+    &::placeholder {
+      color: rgba(255, 255, 255, 0.5);
+    }
+
+    &:focus {
+      outline: none;
+      border-color: #00d4ff;
+      background-color: rgba(0, 212, 255, 0.12);
+    }
+  }
+  &__add-password-input {
+    padding: 0.75rem;
+    border: 1px solid rgba(0, 212, 255, 0.3);
+    border-radius: 0.5rem;
+    background-color: rgba(0, 212, 255, 0.08);
+    color: vars.$white;
+    font-size: 0.9rem;
+
+    &::placeholder {
+      color: rgba(255, 255, 255, 0.5);
+    }
+
+    &:focus {
+      outline: none;
+      border-color: #00d4ff;
+      background-color: rgba(0, 212, 255, 0.12);
+    }
+  }
+  &__add-email-input {
+    padding: 0.75rem;
+    border: 1px solid rgba(0, 212, 255, 0.3);
+    border-radius: 0.5rem;
+    background-color: rgba(0, 212, 255, 0.08);
+    color: vars.$white;
+    font-size: 0.9rem;
+
+    &::placeholder {
+      color: rgba(255, 255, 255, 0.5);
+    }
+
+    &:focus {
+      outline: none;
+      border-color: #00d4ff;
+      background-color: rgba(0, 212, 255, 0.12);
+    }
+  }
+
+  &__add-confirm-btn {
+    padding: 0.75rem;
+    background: linear-gradient(135deg, #00d4ff 0%, #0099cc 100%);
+    border: none;
+    border-radius: 0.5rem;
+    color: #0a0e27;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s ease;
+
+    &:hover {
+      background: linear-gradient(135deg, #0099cc 0%, #00d4ff 100%);
+      box-shadow: 0 3px 10px rgba(0, 212, 255, 0.5);
+    }
+  }
+
+  &__add-cancel-btn {
+    padding: 0.75rem;
+    background-color: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 0.5rem;
+    color: vars.$white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &:hover {
+      border-color: vars.$white;
+      background-color: rgba(255, 255, 255, 0.05);
+    }
+  }
+}
+
