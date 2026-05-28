@@ -9,7 +9,7 @@ const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState(""); 
-    const [remember, setRemember] = useState(false);
+    // const [remember, setRemember] = useState(false);
   const [showGoogleModal, setShowGoogleModal] = useState(false);
   const [savedGoogleAccounts, setSavedGoogleAccounts] = useState([]);
   const [newGoogleEmail, setNewGoogleEmail] = useState("");
@@ -59,7 +59,7 @@ const Login = () => {
       setError("Please enter a valid email");
       return;
     }
-    const storage = remember ? localStorage : sessionStorage;
+    const storage = sessionStorage;
     storage.setItem("user", JSON.stringify({ email, password }));
     storage.setItem("isLoggedIn", "true");
 
