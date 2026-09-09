@@ -12,7 +12,7 @@ import * as Config from "./../constants/Config";
 const Home = () => {
   return (
     <>
-      <HeroSlide />
+      {/* <HeroSlide /> */}
 
       <div className="container">
         <div className="section mb-3">
